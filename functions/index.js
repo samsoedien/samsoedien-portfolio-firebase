@@ -64,8 +64,8 @@ app.post(
       <p class="default-style"><span style="font-size: 10pt; font-family: helvetica;">Noerani Samsoedien</span></p>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">--</span></div>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">ir. N. Samsoedien</span></div>
-      <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">Industrial Designer</span> <span style="font-size: 7pt; font-family: helvetica;"> </span></div>
-      <div class="default-style"> </div>
+      <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">Industrial Designer</span> <span style="font-size: 7pt; font-family: helvetica;"></span></div>
+      <div class="default-style"></div>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">T: +31 (0)6 308 378 22</span></div>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">E: <a href="mailto:contact@samsoedien.com">contact@samsoedien.com</a></span></div>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">W: <a href="https://www.samsoedien.com">https://www.samsoedien.com</a></span></div>
