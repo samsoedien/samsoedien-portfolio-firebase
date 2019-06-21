@@ -3,7 +3,7 @@ const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-const { check, validationResult } = require("express-validator/check");
+const { check, validationResult } = require("express-validator");
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -64,7 +64,7 @@ app.post(
       <p class="default-style"><span style="font-size: 10pt; font-family: helvetica;">Noerani Samsoedien</span></p>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">--</span></div>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">ir. N. Samsoedien</span></div>
-      <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">Industrial Designer</span> <span style="font-size: 7pt; font-family: helvetica;"></span></div>
+      <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">Industrial Designer</span><span style="font-size: 7pt; font-family: helvetica;"></span></div>
       <div class="default-style"></div>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">T: +31 (0)6 308 378 22</span></div>
       <div class="default-style"><span style="font-size: 7pt; font-family: helvetica;">E: <a href="mailto:contact@samsoedien.com">contact@samsoedien.com</a></span></div>
@@ -94,12 +94,12 @@ app.post(
         replyTo: req.body.email,
         subject: req.body.subject, // Subject line
         text: req.body.message, // plain text body
-        attachments: [
-          {
-            fileName: req.body.title,
-            streamSource: fs.createReadStream(req.files.image.path)
-          }
-        ],
+        // attachments: [
+        //   {
+        //     fileName: req.body.title,
+        //     streamSource: fs.createReadStream(req.files.image.path)
+        //   }
+        // ],
         html: htmlEmail // html body
       };
 
