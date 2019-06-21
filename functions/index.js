@@ -88,11 +88,11 @@ app.post(
 
       // setup email data with unicode symbols
       let mailOptions = {
-        from: '"Samsoedien, N" <noreply@samsoedien.com>', // sender address
+        from: '"Samsoedien" <noreply@samsoedien.com>', // sender address
         to: req.body.email, // list of receivers
         cc: "contact@samsoedien.com",
         replyTo: req.body.email,
-        subject: req.body.subject, // Subject line
+        subject: `Confirmation Sent Message - Subject: ${req.body.subject}`, // Subject line
         text: req.body.message, // plain text body
         // attachments: [
         //   {
