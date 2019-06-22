@@ -3,7 +3,7 @@ const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-const { check, validationResult } = require("express-validator");
+const { body, validationResult } = require("express-validator");
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -21,17 +21,21 @@ app.use(express.json({ extended: false }));
 app.post(
   "/",
   [
-    check("name", "Name field is required")
+    body("name", "Name field is required")
       .not()
-      .isEmpty(),
-    check("email", "Email field is required")
+      .isEmpty()
+      .trim(),
+    body("email", "Email field is required")
       .not()
       .isEmpty()
       .isEmail()
-      .withMessage("Email is invalid"),
-    check("message", "Message field is required")
+      .withMessage("Email is invalid")
+      .normalizeEmail(),
+    body("message", "Message field is required")
       .not()
       .isEmpty()
+      .isLength({ min: 12 })
+      .withMessage("Your Message needs to contain at least 12 characters")
   ],
   (req, res) => {
     const errors = validationResult(req);
